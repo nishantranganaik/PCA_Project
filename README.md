@@ -20,13 +20,11 @@ From the class labels:
 - **45 patients** are ER+ (label = 1)
 - **60 patients** are ER- (label = 0)
 
-## 3. Reference Figure from the Paper
-
-Below is the reference figure from the Nature Primer that we aim to reproduce (panels **a**, **b**, and **c**):
+## 3. Plots
 
 ![Reference figure from the paper](./PCA PLOTS.png)
 
-## 4. Figure 1a — XBP1 vs GATA3 Scatter Plot
+## 4. Plot 1a — XBP1 vs GATA3 Scatter Plot
 
 ### What we did
 
@@ -40,7 +38,7 @@ We extracted the expression values of these two genes for all 105 patients and p
 
 ### Result
 
-![Figure 1a — XBP1 vs GATA3 scatter plot](./PCA_1a.png)
+![Plot 1a — XBP1 vs GATA3 scatter plot](./PCA_1a.png)
 
 ### Observations
 
@@ -49,7 +47,7 @@ We extracted the expression values of these two genes for all 105 patients and p
 - **ER- patients (black)** are more spread out but tend to occupy the **lower-left** region.
 - The two classes are not perfectly separable using just these two genes, but there is a clear trend — which is exactly what the paper shows.
 
-## 5. Figure 1b — PCA Directions on the Scatter Plot
+## 5. Plot 1b — PCA Directions on the Scatter Plot
 
 ### What we did
 
@@ -60,7 +58,7 @@ After computing PCA on the 2D data (GATA3, XBP1), we overlaid the directions of 
 
 ### Result
 
-![Figure 1b — Scatter plot with PC1 and PC2 directions](./PCA_1b.png)
+![Plot 1b — Scatter plot with PC1 and PC2 directions](./PCA_1b.png)
 
 ### Observations
 
@@ -68,7 +66,7 @@ After computing PCA on the 2D data (GATA3, XBP1), we overlaid the directions of 
 - The **PC2 direction** is perpendicular and captures the remaining variance, which is mostly noise or within-class variation.
 - The two lines form a new coordinate system centered at the data mean. PCA essentially rotates the original axes (GATA3, XBP1) into these new directions.
 
-## 6. Figure 1c — Projection onto PC1
+## 6. Plot 1c — Projection onto PC1
 
 ### What is PCA?
 
@@ -94,7 +92,7 @@ Covariance Matrix:
 
 ### Result
 
-![Figure 1c — Projection onto PC1](./PCA_1c.png)
+![Plot 1c — Projection onto PC1](./PCA_1c.png)
 
 The plot shows three horizontal strips:
 
@@ -111,7 +109,7 @@ The plot shows three horizontal strips:
 
 ## 7. Code Summary
 
-The analysis script (`pca_analysis.py`) does the following:
+The analysis script (`PCA_Project.py`) does the following:
 
 1. **Loads** the expression data and class labels
 2. **Extracts** XBP1 (ID 4404) and GATA3 (ID 4359) expression values
@@ -134,14 +132,14 @@ The analysis script (`pca_analysis.py`) does the following:
 ### How to run
 
 ```bash
-python pca_analysis.py
+python PCA_Project.py
 ```
 
 This will generate three output images:
-- `figure_1a.png` — XBP1 vs GATA3 scatter plot
-- `figure_1b.png` — Scatter plot with PC1/PC2 direction arrows
-- `figure_1c.png` — PC1 projection plot
+- ` PCA_1a.png` — XBP1 vs GATA3 scatter plot
+- `PCA_1b.png` — Scatter plot with PC1/PC2 direction arrows
+- `PCA_1c.png` — PC1 projection plot
 
 ## 8. Conclusion
 
-Using just two genes (XBP1 and GATA3), we can already see a pattern distinguishing ER+ and ER- breast cancer patients. The scatter plot (Figure 1a) shows ER+ patients clustering in the high-expression region. Overlaying the PCA axes (Figure 1b) reveals that the direction of maximum variance (PC1) aligns with the correlation between these two genes. Projecting onto PC1 (Figure 1c) reduces the 2D data to a single axis that naturally separates the two cancer subtypes, capturing **77.9%** of the total variance. This demonstrates how dimensionality reduction techniques like PCA can reveal underlying biological structure in gene expression data.
+Using just two genes (XBP1 and GATA3), we can already see a pattern distinguishing ER+ and ER- breast cancer patients. The scatter plot (1a) shows ER+ patients clustering in the high-expression region. Overlaying the PCA axes (1b) reveals that the direction of maximum variance (PC1) aligns with the correlation between these two genes. Projecting onto PC1 (1c) reduces the 2D data to a single axis that naturally separates the two cancer subtypes, capturing **77.9%** of the total variance. This demonstrates how dimensionality reduction techniques like PCA can reveal underlying biological structure in gene expression data.
