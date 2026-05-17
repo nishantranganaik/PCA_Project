@@ -24,7 +24,7 @@ From the class labels:
 
 Below is the reference figure from the Nature Primer that we aim to reproduce (panels **a**, **b**, and **c**):
 
-![Reference figure from the paper](./pca.png)
+![Reference figure from the paper](./PCA PLOTS.png)
 
 ## 4. Figure 1a — XBP1 vs GATA3 Scatter Plot
 
@@ -40,7 +40,7 @@ We extracted the expression values of these two genes for all 105 patients and p
 
 ### Result
 
-![Figure 1a — XBP1 vs GATA3 scatter plot](./figure_1a.png)
+![Figure 1a — XBP1 vs GATA3 scatter plot](./PCA_1a.png)
 
 ### Observations
 
@@ -60,7 +60,7 @@ After computing PCA on the 2D data (GATA3, XBP1), we overlaid the directions of 
 
 ### Result
 
-![Figure 1b — Scatter plot with PC1 and PC2 directions](./figure_1b.png)
+![Figure 1b — Scatter plot with PC1 and PC2 directions](./PCA_1b.png)
 
 ### Observations
 
@@ -94,7 +94,7 @@ Covariance Matrix:
 
 ### Result
 
-![Figure 1c — Projection onto PC1](./figure_1c.png)
+![Figure 1c — Projection onto PC1](./PCA_1c.png)
 
 The plot shows three horizontal strips:
 
