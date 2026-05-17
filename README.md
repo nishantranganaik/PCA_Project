@@ -20,11 +20,7 @@ From the class labels:
 - **45 patients** are ER+ (label = 1)
 - **60 patients** are ER- (label = 0)
 
-## 3. Plots
-
-![Reference figure from the paper](./PCA PLOTS.png)
-
-## 4. Plot 1a — XBP1 vs GATA3 Scatter Plot
+## 3. Plot 1a — XBP1 vs GATA3 Scatter Plot
 
 ### What we did
 
@@ -47,7 +43,7 @@ We extracted the expression values of these two genes for all 105 patients and p
 - **ER- patients (black)** are more spread out but tend to occupy the **lower-left** region.
 - The two classes are not perfectly separable using just these two genes, but there is a clear trend — which is exactly what the paper shows.
 
-## 5. Plot 1b — PCA Directions on the Scatter Plot
+## 4. Plot 1b — PCA Directions on the Scatter Plot
 
 ### What we did
 
@@ -66,7 +62,7 @@ After computing PCA on the 2D data (GATA3, XBP1), we overlaid the directions of 
 - The **PC2 direction** is perpendicular and captures the remaining variance, which is mostly noise or within-class variation.
 - The two lines form a new coordinate system centered at the data mean. PCA essentially rotates the original axes (GATA3, XBP1) into these new directions.
 
-## 6. Plot 1c — Projection onto PC1
+## 5. Plot 1c — Projection onto PC1
 
 ### What is PCA?
 
@@ -107,7 +103,7 @@ The plot shows three horizontal strips:
 - This shows the power of PCA: by finding the direction of maximum variance, it naturally separates the two cancer subtypes.
 - The separation is not perfect (there is some overlap), but the trend is strong and matches the paper.
 
-## 7. Code Summary
+## 6. Code Summary
 
 The analysis script (`PCA_Project.py`) does the following:
 
@@ -140,6 +136,6 @@ This will generate three output images:
 - `PCA_1b.png` — Scatter plot with PC1/PC2 direction arrows
 - `PCA_1c.png` — PC1 projection plot
 
-## 8. Conclusion
+## 7. Conclusion
 
 Using just two genes (XBP1 and GATA3), we can already see a pattern distinguishing ER+ and ER- breast cancer patients. The scatter plot (1a) shows ER+ patients clustering in the high-expression region. Overlaying the PCA axes (1b) reveals that the direction of maximum variance (PC1) aligns with the correlation between these two genes. Projecting onto PC1 (1c) reduces the 2D data to a single axis that naturally separates the two cancer subtypes, capturing **77.9%** of the total variance. This demonstrates how dimensionality reduction techniques like PCA can reveal underlying biological structure in gene expression data.
